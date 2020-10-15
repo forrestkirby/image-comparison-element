@@ -1,0 +1,361 @@
+{
+    "@import": "./element.php",
+    "name": "hd-image-comparison",
+    "title": "HD Image Comparison",
+    "group": "herzog-dupont",
+    "icon": "${url:images/icon.svg}",
+    "iconSmall": "${url:images/iconSmall.svg}",
+    "element": true,
+    "width": 500,
+    "defaults": {
+        "image_width": "2560",
+        "image_height": "1440",
+        "icon": "code",
+        "icon_width": 40,
+        "slider_background": "default",
+        "slider_start": "50",
+        "margin": "default",
+        "image_svg_color": "emphasis"
+    },
+    "placeholder": {
+        "props": {
+            "image": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
+            "image_2": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}"
+        }
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "image": {
+            "label": "Image",
+            "type": "image",
+            "source": true
+        },
+        "image_width": {
+            "label": "Width",
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "image"
+        },
+        "image_height": {
+            "label": "Height",
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "image"
+        },
+        "image_alt": {
+            "label": "Image Alt",
+            "description": "Enter the image's alt attribute.",
+            "enable": "image",
+            "source": true
+        },
+        "image_2": {
+            "label": "Image 2",
+            "type": "image",
+            "source": true
+        },
+        "image_2_alt": {
+            "label": "Image 2 Alt",
+            "description": "Enter the second image's alt attribute.",
+            "enable": "image_2",
+            "source": true
+        },
+        "icon": {
+            "label": "Slider Icon",
+            "description": "Click on the pencil to pick an icon from the icon library.",
+            "type": "icon",
+            "source": true
+        },
+        "link": {
+            "label": "Link",
+            "type": "link",
+            "attrs": {
+                "placeholder": "https://"
+            },
+            "source": true
+        },
+        "link_target": {
+            "label": "Link Target",
+            "type": "select",
+            "options": {
+                "Same Window": "",
+                "New Window": "blank",
+                "Modal": "modal"
+            },
+            "enable": "link"
+        },
+        "image_border": {
+            "label": "Border",
+            "description": "Select the image's border style.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Rounded": "rounded",
+                "Circle": "circle",
+                "Pill": "pill"
+            }
+        },
+        "image_box_shadow": {
+            "label": "Box Shadow",
+            "description": "Select the image's box shadow size.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge"
+            }
+        },
+        "image_hover_box_shadow": {
+            "label": "Hover Box Shadow",
+            "description": "Select the image's box shadow size on hover.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge"
+            },
+            "enable": "link"
+        },
+        "image_box_decoration": {
+            "label": "Box Decoration",
+            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Default": "default",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Floating Shadow": "shadow",
+                "Mask": "mask"
+            }
+        },
+        "image_box_decoration_inverse": {
+            "type": "checkbox",
+            "text": "Inverse style",
+            "enable": "$match(image_box_decoration, '^(default|primary|secondary)$')"
+        },
+        "image_svg_inline": {
+            "label": "Inline SVG",
+            "description": "Inject SVG images into the page markup, so that they can easily be styled with CSS.",
+            "type": "checkbox",
+            "text": "Make SVG stylable with CSS"
+        },
+        "image_svg_animate": {
+            "type": "checkbox",
+            "text": "Animate strokes",
+            "enable": "image_svg_inline"
+        },
+        "image_svg_color": {
+            "label": "SVG Color",
+            "description": "Select the SVG color. It will only apply to supported elements defined in the SVG.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Muted": "muted",
+                "Emphasis": "emphasis",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Success": "success",
+                "Warning": "warning",
+                "Danger": "danger"
+            },
+            "enable": "image_svg_inline"
+        },
+        "icon_color": {
+            "label": "Slider Icon Color",
+            "description": "Select the icon color.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Muted": "muted",
+                "Emphasis": "emphasis",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Success": "success",
+                "Warning": "warning",
+                "Danger": "danger"
+            }
+        },
+        "icon_width": {
+            "label": "Slider Icon Width",
+            "description": "Set the icon width."
+        },
+        "slider_background": {
+            "label": "Slider Background",
+            "type": "select",
+            "options": {
+                "Default": "default",
+                "Muted": "muted",
+                "Primary": "primary",
+                "Secondary": "secondary"
+            }
+        },
+        "slider_start": {
+            "label": "Slider Start Position",
+            "description": "Set the start position of the slider in percent.",
+            "type": "number"
+        },
+        "lightbox_width": {
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "link_target == 'modal'"
+        },
+        "lightbox_height": {
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "link_target == 'modal'"
+        },
+        "position": "${builder.position}",
+        "position_left": "${builder.position_left}",
+        "position_right": "${builder.position_right}",
+        "position_top": "${builder.position_top}",
+        "position_bottom": "${builder.position_bottom}",
+        "position_z_index": "${builder.position_z_index}",
+        "margin": "${builder.margin}",
+        "margin_remove_top": "${builder.margin_remove_top}",
+        "margin_remove_bottom": "${builder.margin_remove_bottom}",
+        "maxwidth": "${builder.maxwidth}",
+        "maxwidth_breakpoint": "${builder.maxwidth_breakpoint}",
+        "block_align": "${builder.block_align}",
+        "block_align_breakpoint": "${builder.block_align_breakpoint}",
+        "block_align_fallback": "${builder.block_align_fallback}",
+        "text_align": "${builder.text_align}",
+        "text_align_breakpoint": "${builder.text_align_breakpoint}",
+        "text_align_fallback": "${builder.text_align_fallback}",
+        "animation": "${builder.animation}",
+        "_parallax_button": "${builder._parallax_button}",
+        "visibility": "${builder.visibility}",
+        "container_padding_remove": "${builder.container_padding_remove}",
+        "name": "${builder.name}",
+        "status": "${builder.status}",
+        "source": "${builder.source}",
+        "id": "${builder.id}",
+        "class": "${builder.cls}",
+        "attributes": "${builder.attrs}",
+        "css": {
+            "label": "CSS",
+            "description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>, <code>.el-image</code>, <code>.el-link</code>, <code>.el-image-2</code>",
+            "type": "editor",
+            "editor": "code",
+            "mode": "css",
+            "attrs": {
+                "debounce": 500
+            }
+        }
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "image",
+                        {
+                            "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
+                            "name": "_image_dimension",
+                            "type": "grid",
+                            "width": "1-2",
+                            "fields": [
+                                "image_width",
+                                "image_height"
+                            ]
+                        },
+                        "image_alt",
+                        "image_2",
+                        "image_2_alt",
+                        "icon",
+                        "link",
+                        "link_target"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        {
+                            "label": "Image",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "image_border",
+                                "image_box_shadow",
+                                "image_hover_box_shadow",
+                                "image_box_decoration",
+                                "image_box_decoration_inverse",
+                                "image_svg_inline",
+                                "image_svg_animate",
+                                "image_svg_color"
+                            ]
+                        },
+                        {
+                            "label": "Slider Icon",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "icon_width",
+                                "icon_color",
+                                "slider_background",
+                                "slider_start"
+                            ]
+                        },
+                        {
+                            "label": "Lightbox",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                {
+                                    "label": "Width/Height",
+                                    "description": "Set the width and height for the lightbox content, i.e. image, video or iframe.",
+                                    "type": "grid",
+                                    "width": "1-2",
+                                    "fields": [
+                                        "lightbox_width",
+                                        "lightbox_height"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "General",
+                            "type": "group",
+                            "fields": [
+                                "position",
+                                "position_left",
+                                "position_right",
+                                "position_top",
+                                "position_bottom",
+                                "position_z_index",
+                                "margin",
+                                "margin_remove_top",
+                                "margin_remove_bottom",
+                                "maxwidth",
+                                "maxwidth_breakpoint",
+                                "block_align",
+                                "block_align_breakpoint",
+                                "block_align_fallback",
+                                "text_align",
+                                "text_align_breakpoint",
+                                "text_align_fallback",
+                                "animation",
+                                "_parallax_button",
+                                "visibility",
+                                "container_padding_remove"
+                            ]
+                        }
+                    ]
+                },
+                "${builder.advanced}"
+            ]
+        }
+    }
+}
