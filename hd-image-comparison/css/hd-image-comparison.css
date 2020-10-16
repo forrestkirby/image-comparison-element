@@ -1,5 +1,6 @@
 .hd-image-comparison {
 	position: relative;
+	display: inline-flex;
 }
 
 .hd-image-comparison .hd-image-comparison-before {
