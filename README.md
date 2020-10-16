@@ -46,6 +46,6 @@ Image Comparison Element is a custom element for YOOtheme Pro developed by [YOOt
 
 ## Screenshots
 
-![](https://herzog-dupont/images/tutorials/tutorial-image-comparison-2.jpg)
+![](https://herzog-dupont.de/images/tutorials/tutorial-image-comparison-2.jpg)
 
-![](https://herzog-dupont/images/tutorials/tutorial-image-comparison-3.jpg)
+![](https://herzog-dupont.de/images/tutorials/tutorial-image-comparison-3.jpg)
