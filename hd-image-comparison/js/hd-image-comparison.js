@@ -2,9 +2,10 @@ class hdImgComp {
 
 	constructor(el) {
 		this.element = el;
-		this.before = el.children[0];
-		this.after = el.children[1];
-		this.slider = el.children[2];
+		this.before = el.querySelector('.hd-image-comparison-before');
+		this.beforeimg = el.querySelector('.hd-image-comparison-before img');
+		this.afterimg = el.querySelector('.hd-image-comparison-after img');
+		this.slider = el.querySelector('.hd-image-comparison-slider');
 		this.range = document.createElement('input');
 		this.range.type = 'range';
 		this.range.min = '0';
@@ -17,6 +18,7 @@ class hdImgComp {
 	}
 
 	init() {
+		// set initial sizes and positions
 		this.setSizePos();
 		// add event listeners
 		this.range.addEventListener('input', () => { this.slide() });
@@ -26,15 +28,21 @@ class hdImgComp {
 	}
 
 	setSizePos() {
-		// set initial size of second image container
-		this.after.style.height = `${this.before.offsetHeight}px`;
-		this.after.style.width = `${this.range.value}%`;
+		// set initial size of before image container
+		this.before.style.height = `${this.afterimg.offsetHeight}px`;
+		this.before.style.width = `${this.range.value}%`;
+		// set initial width of element container
+		this.element.style.width = `${this.afterimg.offsetWidth}px`;
+		// set initial width of before image
+		this.beforeimg.style.width = `${this.afterimg.offsetWidth}px`;
 		// set initial position of slider
 		this.slider.style.left = `${this.range.value}%`;
 	}
 
 	slide() {
-		this.after.style.width = `${this.range.value}%`;
+		// update width of before image container
+		this.before.style.width = `${this.range.value}%`;
+		// update position of slider
 		this.slider.style.left = `${this.range.value}%`;
 	}
 
@@ -42,7 +50,7 @@ class hdImgComp {
 
 UIkit.util.$$('.hd-image-comparison-after img').forEach(function(el) {
 	el.addEventListener('load', (e) => {
-		let x = new hdImgComp(e.target.parentNode.parentNode);
+		let x = new hdImgComp(e.target.closest('.hd-image-comparison'));
 		x.init();
 	}, {
 		once: true

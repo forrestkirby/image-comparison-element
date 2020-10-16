@@ -2,14 +2,14 @@
 	position: relative;
 }
 
-.hd-image-comparison-after {
+.hd-image-comparison .hd-image-comparison-before {
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	overflow: hidden;
 }
 
-.hd-image-comparison-after img {
+.hd-image-comparison-before img {
 	max-width: none;
 }
 
