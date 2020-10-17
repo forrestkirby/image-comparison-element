@@ -81,18 +81,30 @@ $decoration = $this->el('div', [
 
 <?= $el($props, $attrs) ?>
 
+    <?php if ($props['image_before'] && $props['image_after']) : ?>
     <div class="hd-image-comparison">
         <?php if ($props['image_box_decoration']) : ?>
         <?= $decoration($props) ?>
+        <?php endif ?>
             <div class="hd-image-comparison-after"><?= $image_after($props) ?></div>
             <div class="hd-image-comparison-before"><?= $image_before($props) ?></div>
+        <?php if ($props['image_box_decoration']) : ?>
         <?= $decoration->end() ?>
-        <?= $slider($props) ?></div>
-        <?php else : ?>
-        <div class="hd-image-comparison-after"><?= $image_after($props) ?></div>
-        <div class="hd-image-comparison-before"><?= $image_before($props) ?></div>
-        <?= $slider($props) ?></div>
         <?php endif ?>
+        <?= $slider($props) ?></div>
     </div>
+    <?php elseif ($props['image_before']) : ?>
+        <?php if ($props['image_box_decoration']) : ?>
+        <?= $decoration($props, $image_before($props)) ?>
+        <?php else : ?>
+        <?= $image_before($props) ?>
+        <?php endif ?>
+    <?php elseif ($props['image_after']) : ?>
+        <?php if ($props['image_box_decoration']) : ?>
+        <?= $decoration($props, $image_after($props)) ?>
+        <?php else : ?>
+        <?= $image_after($props) ?>
+        <?php endif ?>
+    <?php endif ?>
 
 </div>

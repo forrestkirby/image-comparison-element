@@ -10,7 +10,7 @@
 	overflow: hidden;
 }
 
-.hd-image-comparison-before img {
+.hd-image-comparison .hd-image-comparison-before img {
 	max-width: none;
 }
 
@@ -23,11 +23,11 @@
 	transform: translate(-50%, -50%);
 }
 
-.hd-image-comparison-slider svg {
+.hd-image-comparison .hd-image-comparison-slider svg {
 	max-width: none;
 }
 
-.hd-image-comparison-range {
+.hd-image-comparison .hd-image-comparison-range {
 	position: absolute;
 	top: 0;
 	left: 0;

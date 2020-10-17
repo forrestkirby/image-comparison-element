@@ -8,12 +8,10 @@
     "element": true,
     "width": 500,
     "defaults": {
-        "image_width": "2560",
-        "image_height": "1440",
         "icon": "code",
         "icon_width": 40,
         "slider_background": "default",
-        "slider_start": "50",
+        "slider_start": 50,
         "margin": "default"
     },
     "placeholder": {
@@ -142,7 +140,12 @@
         "slider_start": {
             "label": "Slider Start Position",
             "description": "Set the start position of the slider in percent.",
-            "type": "number"
+            "type": "range",
+            "attrs": {
+                "min": 0,
+                "max": 100,
+                "step": 1
+            }
         },
         "position": "${builder.position}",
         "position_left": "${builder.position_left}",

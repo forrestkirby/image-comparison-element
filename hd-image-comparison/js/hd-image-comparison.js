@@ -10,7 +10,7 @@ class hdImgComp {
 		this.range.type = 'range';
 		this.range.min = '0';
 		this.range.max = '100';
-		this.range.value = (0 <= this.slider.dataset.start <= 100) ? this.slider.dataset.start : 50;
+		this.range.value = this.slider.dataset.start ? this.slider.dataset.start : 50;
 		this.range.style.marginLeft = `calc(-1 * (${this.slider.dataset.margin}px + 20px) / 2)`;
 		this.range.style.width = `calc(100% + (${this.slider.dataset.width}px + 20px))`;
 		this.range.classList.add('hd-image-comparison-range');
@@ -50,10 +50,11 @@ class hdImgComp {
 
 }
 
-UIkit.util.$$('.hd-image-comparison-after img').forEach(function(el) {
+UIkit.util.$$('.hd-image-comparison-before img').forEach(function(el) {
 	el.addEventListener('load', (e) => {
 		let x = new hdImgComp(e.target.closest('.hd-image-comparison'));
-		x.init();
+		if (x.afterimg)
+			x.init();
 	}, {
 		once: true
 	});
