@@ -1,5 +1,13 @@
 # Image Comparison Element Changelog
 
+## 2.3.5
+
+### Changed
+
+- element rendering if only one image has been set
+- `slider_start` field type
+- element icons
+
 ## 2.3.4
 
 ### Fixed
