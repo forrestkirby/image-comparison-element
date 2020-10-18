@@ -2,6 +2,10 @@
 
 ## 2.3.5
 
+### Fixed
+
+- range thumb size match slider size on iOS
+
 ### Changed
 
 - element rendering if only one image has been set
