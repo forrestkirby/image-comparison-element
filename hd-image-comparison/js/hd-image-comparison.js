@@ -11,7 +11,7 @@ class hdImgComp {
 		this.range.min = '0';
 		this.range.max = '100';
 		this.range.value = this.slider.dataset.start ? this.slider.dataset.start : 50;
-		this.range.style.marginLeft = `calc(-1 * (${this.slider.dataset.margin}px + 20px) / 2)`;
+		this.range.style.marginLeft = `calc(-1 * (${this.slider.dataset.width}px + 20px) / 2)`;
 		this.range.style.width = `calc(100% + (${this.slider.dataset.width}px + 20px))`;
 		this.range.classList.add('hd-image-comparison-range');
 		el.insertBefore(this.range, this.slider);
@@ -28,16 +28,16 @@ class hdImgComp {
 	}
 
 	setSizePos() {
-		// reset initial width of element container
+		// reset width of element container
 		this.element.style.width = 'auto';
-		// set initial size of before image container
+		// set size of before image container
 		this.before.style.height = `${this.afterimg.offsetHeight}px`;
 		this.before.style.width = `${this.range.value}%`;
-		// set initial width of element container
+		// set width of element container
 		this.element.style.width = `${this.afterimg.offsetWidth}px`;
-		// set initial width of before image
+		// set width of before image
 		this.beforeimg.style.width = `${this.afterimg.offsetWidth}px`;
-		// set initial position of slider
+		// set position of slider
 		this.slider.style.left = `${this.range.value}%`;
 	}
 

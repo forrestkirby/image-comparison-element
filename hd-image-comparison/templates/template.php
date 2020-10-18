@@ -1,5 +1,7 @@
 <?php
 
+$uniqid = uniqid('hd-');
+
 $el = $this->el('div');
 
 // Image Before
@@ -58,10 +60,6 @@ $slider = $this->el('div', [
         '{icon_width}',
     ],
 
-    'data-margin' => [
-        '{icon_width}',
-    ],
-
 ]);
 
 // Box decoration
@@ -81,8 +79,19 @@ $decoration = $this->el('div', [
 
 <?= $el($props, $attrs) ?>
 
+    <style>
+    #<?= $uniqid ?> .hd-image-comparison-range::-webkit-slider-thumb {
+        height: <?= $props['icon_width'] ?>px;
+        width: <?= $props['icon_width'] ?>px;
+    }
+    #<?= $uniqid ?> .hd-image-comparison-range::-moz-range-thumb {
+        height: <?= $props['icon_width'] ?>px;
+        width: <?= $props['icon_width'] ?>px;
+    }
+    </style>
+
     <?php if ($props['image_before'] && $props['image_after']) : ?>
-    <div class="hd-image-comparison">
+    <div id ="<?= $uniqid ?>" class="hd-image-comparison">
         <?php if ($props['image_box_decoration']) : ?>
         <?= $decoration($props) ?>
         <?php endif ?>
