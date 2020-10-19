@@ -42,7 +42,7 @@ Image Comparison Element is a custom element for YOOtheme Pro developed by [YOOt
 - [Progress Element](https://github.com/forrestkirby/progress-element)
 - [Counter Element](https://github.com/forrestkirby/counter-element)
 - [Flipcard Element](https://github.com/forrestkirby/flipcard-element)
-- [Timeine Element](https://github.com/forrestkirby/timeline-element)
+- [Timeline Element](https://github.com/forrestkirby/timeline-element)
 
 ## Screenshots
 
