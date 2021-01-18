@@ -1,5 +1,15 @@
 # Image Comparison Element Changelog
 
+## 2.3.27
+
+### Added
+
+- change slider position on mousemove
+
+### Fixed
+
+- element exceeds container width
+
 ## 2.3.5
 
 ### Fixed

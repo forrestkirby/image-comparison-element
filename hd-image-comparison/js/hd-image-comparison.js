@@ -6,6 +6,9 @@ class hdImgComp {
 		this.beforeimg = el.querySelector('.hd-image-comparison-before img');
 		this.afterimg = el.querySelector('.hd-image-comparison-after img');
 		this.slider = el.querySelector('.hd-image-comparison-slider');
+		this.iconWidth = parseInt(this.slider.getAttribute('uk-icon').split('height: ')[1]);
+		this.element.style.marginLeft = this.iconWidth + 'px';
+		this.element.style.marginRight = this.iconWidth + 'px';
 		this.range = document.createElement('input');
 		this.range.type = 'range';
 		this.range.min = '0';
@@ -21,8 +24,10 @@ class hdImgComp {
 		// set initial sizes and positions
 		this.setSizePos();
 		// add event listeners
-		this.range.addEventListener('input', () => { this.slide() });
-		this.range.addEventListener('change', () => { this.slide() });
+		this.range.addEventListener('input', (e) => { this.slide() });
+		if (this.slider.dataset.onmousemove) {
+			this.range.addEventListener('mousemove', (e) => { this.slideOnMousemove(e) });
+		}
 		window.addEventListener('resize', () => { this.setSizePos() });
 		window.addEventListener('orientationchange', () => { this.setSizePos() });
 	}
@@ -39,6 +44,13 @@ class hdImgComp {
 		this.beforeimg.style.width = `${this.afterimg.offsetWidth}px`;
 		// set position of slider
 		this.slider.style.left = `${this.range.value}%`;
+	}
+
+	slideOnMousemove(e) {
+		let rect = this.range.getBoundingClientRect();
+		let newWidth = Math.round((e.clientX - rect.left - this.iconWidth) / (rect.right - rect.left - this.iconWidth * 2) * 100);
+		this.range.value = newWidth;
+		this.slide();
 	}
 
 	slide() {

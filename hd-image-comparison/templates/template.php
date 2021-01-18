@@ -60,6 +60,10 @@ $slider = $this->el('div', [
         '{icon_width}',
     ],
 
+    'data-onmousemove' => [
+        '{slider_onmousemove}',
+    ],
+
 ]);
 
 // Box decoration
