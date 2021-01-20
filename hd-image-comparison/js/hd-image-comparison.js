@@ -24,7 +24,7 @@ class hdImgComp {
 		// set initial sizes and positions
 		this.setSizePos();
 		// add event listeners
-		this.range.addEventListener('input', (e) => { this.slide() });
+		this.range.addEventListener('input', () => { this.slide() });
 		if (this.slider.dataset.onmousemove) {
 			this.range.addEventListener('mousemove', (e) => { this.slideOnMousemove(e) });
 		}
