@@ -47,7 +47,7 @@ Image Comparison Element is a custom element for YOOtheme Pro developed by [YOOt
 - [Counter Element](https://github.com/forrestkirby/counter-element)
 - [Flipcard Element](https://github.com/forrestkirby/flipcard-element)
 - [Timeline Element](https://github.com/forrestkirby/timeline-element)
-- [Herzog Dupont for YOOtheme Pro (Joomla!)](https://github.com/forrestkirby/herzogdupont-joomla)
+- [Herzog Dupont Joomla! Plugin](https://github.com/forrestkirby/herzogdupont-joomla)
 
 ## Screenshots
 
