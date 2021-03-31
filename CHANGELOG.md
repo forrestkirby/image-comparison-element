@@ -1,5 +1,11 @@
 # Image Comparison Element Changelog
 
+## 2.4.8
+
+### Fixed
+
+- initialization if lazy loading is disabled
+
 ## 2.3.27
 
 ### Added
