@@ -1,5 +1,7 @@
 <?php
 
+/* Image Comparison Element Copyright (C) 2020–2021 Thomas Weidlich GNU GPL v3 */
+
 $uniqid = uniqid('hd-');
 
 $el = $this->el('div');
