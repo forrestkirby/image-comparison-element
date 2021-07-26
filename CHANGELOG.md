@@ -1,5 +1,11 @@
 # Image Comparison Element Changelog
 
+## 2.5.8
+
+### Fixed
+
+- initialization in throttled networks
+
 ## 2.4.8
 
 ### Fixed
