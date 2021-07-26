@@ -1,6 +1,6 @@
 <?php
 
-/* Image Comparison Element Copyright (C) 2020–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2020–2021 Thomas Weidlich GNU GPL v3 */
 
 if ($props['image_before']) : ?>
 <img src="<?= $props['image_before'] ?>" alt="<?= $props['image_before_alt'] ?>">
