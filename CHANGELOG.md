@@ -1,5 +1,11 @@
 # Image Comparison Element Changelog
 
+## 2.5.9
+
+### Fixed
+
+- initialization in Safari with 0px sized images
+
 ## 2.5.8
 
 ### Fixed
