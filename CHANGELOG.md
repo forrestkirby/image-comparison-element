@@ -1,5 +1,11 @@
 # Image Comparison Element Changelog
 
+## 2.5.10
+
+### Fixed
+
+- initialization in Safari
+
 ## 2.5.9
 
 ### Fixed
