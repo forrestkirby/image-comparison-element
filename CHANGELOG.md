@@ -1,5 +1,11 @@
 # Image Comparison Element Changelog
 
+## 2.6.8
+
+### Added
+
+- figcaption to content.php
+
 ## 2.5.10
 
 ### Fixed
