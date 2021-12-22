@@ -1,5 +1,11 @@
 # Image Comparison Element Changelog
 
+## 2.7.11
+
+### Fixed
+
+- initialization if after image load event is not triggered
+
 ## 2.7.9
 
 ### Added
